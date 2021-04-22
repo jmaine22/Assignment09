@@ -6,6 +6,8 @@ let employees = [];
 
 
 // GET DOM ELEMENTS
+let empForm = document.querySelector('#addForm');
+let empTable = document.querySelector('#employees');
 
 
 // BUILD THE EMPLOYEES TABLE WHEN THE PAGE LOADS
@@ -14,7 +16,7 @@ let employees = [];
 // ADD EMPLOYEE
 form.addEventListener('submit', (e) => {
     // PREVENT FORM SUBMISSION
-
+    e.preventDefault();
     // GET THE VALUES FROM THE TEXT BOXES
 
     // ADD THE NEW EMPLOYEE TO A NEW ARRAY OBJECT
@@ -24,7 +26,7 @@ form.addEventListener('submit', (e) => {
     // BUILD THE GRID
 
     // RESET THE FORM
-
+    document.querySelector('#addForm').focus();
     // SET FOCUS BACK TO THE ID TEXT BOX
 
 });
