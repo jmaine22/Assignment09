@@ -15,7 +15,7 @@ let empTable = document.querySelector('#employees');
 // BUILD THE EMPLOYEES TABLE WHEN THE PAGE LOADS
 window.addEventListener("load", function () {
     "use strict";
-
+    
 });
 
 // ADD EMPLOYEE
