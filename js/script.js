@@ -15,7 +15,7 @@ let empTable = document.querySelector('#employees');
 // BUILD THE EMPLOYEES TABLE WHEN THE PAGE LOADS
 window.addEventListener("load", function () {
     "use strict";
-    
+
 });
 
 // ADD EMPLOYEE
@@ -35,7 +35,7 @@ form.addEventListener('submit', (e) => {
     // BUILD THE GRID
 
     // RESET THE FORM
-    document.querySelector('#addForm').focus();
+    document.querySelector('#addForm').reset();
     // SET FOCUS BACK TO THE ID TEXT BOX
 
 });
