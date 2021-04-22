@@ -7,14 +7,15 @@ let employees = [[34457812, 'Ricky Smith', 3425, 'rsmith@gmail.com', 'Administra
 ];
 // CHECK TO SEE IF STORAGE OBJECT EXISTS WHEN THE PAGE LOADS
 // IF DOES, RETURN STORAGE OBJECT INTO ARRAY INSTEAD OF POPULATED ARRAY
-window.addEventListener("load", function () {
-    //localStorage.setItem("employees", JSON.stringify(employees));
-    let empData = JSON.parse(localStorage.getItem('empdetails'));
+let empData = JSON.parse(localStorage.getItem('empdetails'));
 
-    if (!empData) {
-        empData = employees;
-    }
-});
+if (!empData) {
+    empData = employees;
+}
+// window.addEventListener("load", function () {
+//     //localStorage.setItem("employees", JSON.stringify(employees));
+   
+// });
 
 // GET DOM ELEMENTS
 let form = document.querySelector('#addForm');
