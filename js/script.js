@@ -3,7 +3,9 @@ let employees = [];
 
 // CHECK TO SEE IF STORAGE OBJECT EXISTS WHEN THE PAGE LOADS
 // IF DOES, RETURN STORAGE OBJECT INTO ARRAY INSTEAD OF POPULATED ARRAY
+window.addEventListener("load", function () {
 
+});
 
 // GET DOM ELEMENTS
 let empForm = document.querySelector('#addForm');
@@ -11,7 +13,10 @@ let empTable = document.querySelector('#employees');
 
 
 // BUILD THE EMPLOYEES TABLE WHEN THE PAGE LOADS
+window.addEventListener("load", function () {
+    "use strict";
 
+});
 
 // ADD EMPLOYEE
 form.addEventListener('submit', (e) => {
@@ -38,7 +43,12 @@ form.addEventListener('submit', (e) => {
 // DELETE EMPLOYEE
 empTable.addEventListener('click', (e) => {
     // CONFIRM THE DELETE
-
+    if (e.target.classList.contains('delete')) {
+        if (confirm('Are you sure you want to delete this employee?'))
+        {
+            empTable.deleteRow(e.target.parentElement.parentElement.rowIndex);
+        }
+    }
         // GET THE SELECTED ROWINDEX FOR THE TR (PARENTNODE.PARENTNODE)
 
         // CALL DELETEROW() METHOD TO DELETE SPECIFIC ROW IN THE TABLE
