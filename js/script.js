@@ -18,7 +18,7 @@ window.addEventListener("load", function () {
 });
 
 // GET DOM ELEMENTS
-let empForm = document.querySelector('#addForm');
+let form = document.querySelector('#addForm');
 let empTable = document.querySelector('#employees');
 let empCount = document.querySelector('#empCount');
 let tbody = document.getElementsByTagName('tbody');
