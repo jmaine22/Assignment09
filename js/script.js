@@ -5,7 +5,6 @@ let employees = [[34457812, 'Ricky Smith', 3425, 'rsmith@gmail.com', 'Administra
                 [24354512, 'Cindy Mitchell', 3424, 'cindyM@gmail.com', 'Administrative'],
                 [24354512, 'Josselyn Brown', 0203, 'josselynB@gmail.com', 'Administrative']
 ];
-let storage;
 // CHECK TO SEE IF STORAGE OBJECT EXISTS WHEN THE PAGE LOADS
 // IF DOES, RETURN STORAGE OBJECT INTO ARRAY INSTEAD OF POPULATED ARRAY
 window.addEventListener("load", function () {
@@ -35,15 +34,16 @@ form.addEventListener('submit', (e) => {
     // PREVENT FORM SUBMISSION
     e.preventDefault();
     // GET THE VALUES FROM THE TEXT BOXES
-    let empID = document.querySelector('#id').value;
-    let empName = document.querySelector('#name').value;
-    let empExt = document.querySelector('#extension').value;
-    let empEmail = document.querySelector('#email').value;
-    let empDept = document.querySelector('#department').value;
-    // ADD THE NEW EMPLOYEE TO A NEW ARRAY OBJECT
     let newEmployee = [];
+    newEmployee[0] = document.querySelector('#id').value;
+    newEmployee[1] = document.querySelector('#name').value;
+    newEmployee[2] = document.querySelector('#extension').value;
+    newEmployee[3] = document.querySelector('#email').value;
+    newEmployee[4] = document.querySelector('#department').value;
+    // ADD THE NEW EMPLOYEE TO A NEW ARRAY OBJECT
+    
     // PUSH THE NEW ARRAY TO THE *EXISTING* EMPLOYEES ARRAY
-
+    empData[empData.length] = newEmployee;
     // BUILD THE GRID
     buildGrid();
     // RESET THE FORM
@@ -66,8 +66,9 @@ empTable.addEventListener('click', (e) => {
         // CALL DELETEROW() METHOD TO DELETE SPECIFIC ROW IN THE TABLE
 
         // REMOVE EMPLOYEE FROM ARRAY
-
+        empData.splice(deleteRowIndex -1, 1);
         // BUILD THE GRID
+        buildGrid();
 
 });
 
