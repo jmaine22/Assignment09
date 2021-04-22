@@ -18,7 +18,11 @@ form.addEventListener('submit', (e) => {
     // PREVENT FORM SUBMISSION
     e.preventDefault();
     // GET THE VALUES FROM THE TEXT BOXES
-
+    let empID = document.querySelector('#id').value;
+    let empName = document.querySelector('#name').value;
+    let empExt = document.querySelector('#extension').value;
+    let empEmail = document.querySelector('#email').value;
+    let empDept = document.querySelector('#department').value;
     // ADD THE NEW EMPLOYEE TO A NEW ARRAY OBJECT
 
     // PUSH THE NEW ARRAY TO THE *EXISTING* EMPLOYEES ARRAY
