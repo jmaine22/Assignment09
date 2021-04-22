@@ -25,10 +25,10 @@ let tbody = document.getElementsByTagName('tbody');
 
 
 // BUILD THE EMPLOYEES TABLE WHEN THE PAGE LOADS
-window.addEventListener("load", function () {
-    "use strict";
-    buildGrid();
-});
+buildGrid();
+// window.addEventListener("load", function () {
+//     "use strict";
+// });
 
 // ADD EMPLOYEE
 form.addEventListener('submit', (e) => {
@@ -96,3 +96,29 @@ function buildGrid() {
     localStorage.setItem('empdetails', JSON.stringify(empData))
 
 };
+
+function createTableRow (rowDetails){
+    // create row
+      let row = document.createElement("tr");
+    
+      for(let ele of rowDetails){
+         
+      
+        let cell = document.createElement("td");
+        let cellText = document.createTextNode(ele);
+        cell.appendChild(cellText);
+        row.appendChild(cell);
+    
+      }
+    
+        let cellDelete = document.createElement("td");
+        let delText = document.createTextNode('DELETE')
+        let btn = document.createElement("BUTTON");
+        btn.type='button';
+        btn.className="btn btn-primary delete";
+        btn.appendChild(delText);
+        cellDelete.appendChild(btn);
+        row.appendChild(cellDelete);
+    
+      return row;
+    }
