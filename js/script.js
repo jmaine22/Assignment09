@@ -1,21 +1,28 @@
 // CREATE AN ARRAY OF EMPLOYEES
-let employees = [];
-
+let employees = [[34457812, 'Ricky Smith', 3425, 'rsmith@gmail.com', 'Administrative']
+                [34357912, 'Jake Snake', 1525, 'jsnake@gmail.com', 'Administrative']
+                [24354512, 'Joe Pitcher', 1665, 'jpitcher@gmail.com', 'Administrative']
+                [24354512, 'Cindy Mitchell', 3424, 'cindyM@gmail.com', 'Administrative']
+                [24354512, 'Josselyn Brown', 0203, 'josselynB@gmail.com', 'Administrative']
+];
+let storage;
 // CHECK TO SEE IF STORAGE OBJECT EXISTS WHEN THE PAGE LOADS
 // IF DOES, RETURN STORAGE OBJECT INTO ARRAY INSTEAD OF POPULATED ARRAY
 window.addEventListener("load", function () {
-
+    //localStorage.setItem("employees", JSON.stringify(employees));
+    let empData = JSON.parse(localStorage.getItem())
 });
 
 // GET DOM ELEMENTS
 let empForm = document.querySelector('#addForm');
 let empTable = document.querySelector('#employees');
+let empCount = document.querySelector('#empCount');
 
 
 // BUILD THE EMPLOYEES TABLE WHEN THE PAGE LOADS
 window.addEventListener("load", function () {
     "use strict";
-
+    buildGrid();
 });
 
 // ADD EMPLOYEE
@@ -33,7 +40,7 @@ form.addEventListener('submit', (e) => {
     // PUSH THE NEW ARRAY TO THE *EXISTING* EMPLOYEES ARRAY
 
     // BUILD THE GRID
-
+    buildGrid();
     // RESET THE FORM
     document.querySelector('#addForm').reset();
     // SET FOCUS BACK TO THE ID TEXT BOX
