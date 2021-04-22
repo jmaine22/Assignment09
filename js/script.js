@@ -75,17 +75,23 @@ empTable.addEventListener('click', (e) => {
 // BUILD THE EMPLOYEES GRID
 function buildGrid() {
     // REMOVE THE EXISTING SET OF ROWS BY REMOVING THE ENTIRE TBODY SECTION
-
+    tbody;
+    let tableEle = tbody[0].parentNode;
+    tableEle.removeChild(tbody[0]);
     // REBUILD THE TBODY FROM SCRATCH
-
+    let newTbody = document.createElement('tbody');
     // LOOP THROUGH THE ARRAY OF EMPLOYEES
+    for (let empdetails of empData ){
+        newTbody.appendChild(createTableRow(empdetails));
+    }
     // REBUILDING THE ROW STRUCTURE
-
+    tableEle.appendChild(newTbody);
 
     // BIND THE TBODY TO THE EMPLOYEE TABLE
 
     // UPDATE EMPLOYEE COUNT
-
+    empCount.value = empData.length;
     // STORE THE ARRAY IN STORAGE
+    localStorage.setItem('empdetails', JSON.stringify(empData));
 
 };
